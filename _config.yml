@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Jiaming Kang"
+title                    : "Jiaming Kang (康家名)"
 description              : "Ph.D. student at Beihang university "
 repository               : "kanehub/kanehub.github.io"
 google_scholar_stats_use_cdn : false
@@ -21,8 +21,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Jiaming Kang"
-  avatar           : "images/android-chrome-512x512.png"
+  name             : "Jiaming Kang (康家名)"
+  avatar           :  # "images/android-chrome-512x512.png"
   bio              : "Beihang University"
   location         : "Beijing, China"
   employer         :
