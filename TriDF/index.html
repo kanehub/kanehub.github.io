@@ -15,7 +15,13 @@
             </style></head>
 <body><div class="header" id="top">
           <h1 class="title is-1 publication-title" style="font-size: 45px;"><span style="color: #000080;;font-weight: bolder;">TriDF</span></h1>
-         <h1 class="title is-3 publication-title" style="font-size: 30px; margin-top: -20px;">Efficient Hybrid 3D Representation for Few-Shot</h1>
+         <h1 class="title is-3 publication-title" style="font-size: 30px; margin-top: -20px;">
+		 <span style="color: #000080;;font-weight: bolder;">Tri</span>
+		 "plane-Accelerated " 
+		 <span style="color: #000080;;font-weight: bolder;">D</span>
+		 "ensity " 
+		 <span style="color: #000080;;font-weight: bolder;">F</span>
+		 "ields for Few-Shot"</h1>
 	<h1 class="title is-3 publication-title" style="font-size: 30px; margin-top: -20px;">Remote Sensing Novel View Synthesis</h1>
    <table class="authors">
     <tbody>
@@ -97,14 +103,12 @@ Comprehensive experiments across multiple remote sensing scenes demonstrate that
 <!--               <span style="font-weight: bolder; color: #000080;">TriDF</span> are initialized from SfM, with a few images
               (<span style="font-weight: bolder; color: black;">black cameras</span>). For the sparsely placed Gaussians, we propose densifying new Gaussians to enhance scene coverage by unpooling existing Gaussians into new ones, with properly initialized Gaussian attributes. Monocular depth priors, enhanced by sampling unobserved views
               (<span style="font-weight: bolder; color: red;">red cameras</span>), guide the optimization of grown Gaussians towards a reasonable geometry. The final loss consists of a photometric loss term, and a geometric regularization term calculated as depth correlation. -->
-			We propose a hybrid 3D representation called TriDF, which utilizes explicit tri-plane representations and implicit density fields for efficient novel view synthesis in remote sensing scenes. 
-				Specifically, we explore the potential of tri-plane representations in few-shot rendering by discretizing the scene space into three mutually orthogonal feature planes, 
-				which provide a compact representation of color information with high-frequency components. 
-				This accelerates model convergence since the explicit feature planes can be directly optimized. 
-				Meanwhile, we model the scene geometry as the continuous density field and combine it with an image-based rendering framework that aggregates reference features from neighboring views to compensate for the lack of input scene information. 
-				Unlike traditional NeRF methods, we model the volume density separately to accelerate convergence as it exhibits spatial continuity and has a simpler distribution. 
-				Additionally, we propose a depth-guided optimization method based on 3D point clouds to address overfitting in few-shot rendering. We obtain coarse 3D point clouds through SfM and Patchmatch stereo and use sparse depth supervision to guide the model in reconstructing the correct scene geometry. 
-				This achieves stable optimization with minimal overhead.
+			We introduce an efficient hybrid representation for few-shot novel view synthesis, 
+			which takes in sparse posed images and performs fast reconstruction. TriDF consists of a Tri-Plane branch and a Density Fields branch and separately 
+			predicts color and volume density. High-frequency color features are mapped onto the triplane for direct optimization, and volume density is modeled 
+			as continuous density fields through MLPs, significantly improving training efficiency.
+			We also integrate the image-based rendering framework and depth-guided optimization based on 3D point clouds 
+			for such hybrid representations to stabilize the training process of few-shot NVS tasks.
 			</p>
 		</div>
 	</div>
@@ -124,7 +128,7 @@ Comprehensive experiments across multiple remote sensing scenes demonstrate that
 			<p>
 			The quantitative experiments on <span style="font-weight: bolder; color: #000080;">LEVIR-NVS</span> dataset show that our approach 
 				demonstrates superior performance across all three evaluation metrics compared with both different scene representation forms and state-of-the-art few-shot NeRF methods.
-<!--               We demonstrates the visual improvement of <span style="font-weight: bolder; color: #000080;">TriDF</span> compared with FreeNeRF and SparseNeRF in both the forward-scene and 360 degree dataset.
+<!--               We demonstrate the visual improvement of <span style="font-weight: bolder; color: #000080;">TriDF</span> compared with FreeNeRF and SparseNeRF in both the forward-scene and 360 degree dataset.
               We can observe that NeRF-based methods generate floaters and lead to aliasing results due to limited observation
               Our proposed <span style="font-weight: bolder; color: #000080;">TriDF</span> enforces more consistent and solid surfaces with geometric coherence. -->
 			</p>
